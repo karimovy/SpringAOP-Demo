@@ -7,11 +7,10 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 @Aspect
-@Configuration
+@Component
 public class AspectConfig {
 	private Logger log = LoggerFactory.getLogger(AspectConfig.class);
 
@@ -36,7 +35,6 @@ public class AspectConfig {
 	}
 
 	@Before("statePointCut()")
-	@Bean
 	public void beforeMethod(JoinPoint joinPoint) {
 
 		System.err.println("test ....");
